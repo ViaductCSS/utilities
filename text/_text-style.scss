@@ -1,21 +1,48 @@
 // =============================
-// Text Weight Utility Helper Classes
+// Enable Private Variables
 // =============================
 
-.text-bold   { font-weight: bold   !important; }
-.text-normal { font-weight: normal !important; }
+$_text-weight-enable:    true !default;
+$_text-style-enable:     true !default;
+$_text-transform-enable: true !default;
 
 // =============================
-// Text Style Utility Helper Classes
+// Core Text Weight Utility Helper Classes
 // =============================
 
-.text-italic { font-style: italic !important; }
+@if ($_text-weight-enable) {
+	.text-bold,
+	%text-bold   {
+		font-weight: bold   !important
+	}
+	.text-normal,
+	%text-normal {
+		font-weight: normal !important
+	}
+}
 
 // =============================
-// Text Transform Utility Helper Classes
+// Core Text Style Utility Helper Classes
 // =============================
 
-.text-caps { text-transform: uppercase !important; }
+@if ($_text-style-enable) {
+	.text-italic,
+	%text-italic {
+		font-style: italic !important
+	}
+}
 
+// =============================
+// Core Text Transform Utility Helper Classes
+// =============================
 
-
+@if ($_text-transform-enable) {
+	.text-caps,
+	%text-caps      {
+		text-transform: uppercase  !important
+	}
+	.text-smallcaps,
+	%text-smallcaps {
+		font-variant:   small-caps !important
+	}
+}
